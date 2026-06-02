@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FusionOps — Managed Support Operations by Trade Fusion Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0B0B0B;
+  --charcoal: #161616;
+  --charcoal2: #1e1e1e;
+  --gold: #D4AF37;
+  --gold-light: #E5C76B;
+  --gold-soft: rgba(212,175,55,0.08);
+  --gold-border: rgba(212,175,55,0.2);
+  --gold-border-hover: rgba(212,175,55,0.45);
+  --white: #F5F5F5;
+  --muted: #9A9A9A;
+  --border: rgba(255,255,255,0.06);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Poppins',sans-serif;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.section-inner{max-width:1080px;margin:0 auto;padding:0 40px}
+.section-tag{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block}
+.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(22px,2.8vw,32px);font-weight:800;color:var(--white);line-height:1.15;margin-bottom:16px;letter-spacing:-0.3px}
+.section-sub{font-size:14px;color:var(--muted);max-width:540px;font-weight:300;line-height:1.85;margin-bottom:52px}
+section{padding:96px 0}
+.alt-bg{background:var(--charcoal)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(11,11,11,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--gold-border);height:72px;display:flex;align-items:center}
+.nav-inner{max-width:1080px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav-logo{display:flex;align-items:center;gap:16px;text-decoration:none}
+.nav-logo-img{width:52px;height:52px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(212,175,55,0.15))}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.2}
+.nav-fusion{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:var(--white);letter-spacing:1px}
+.nav-by{font-size:9px;color:var(--muted);letter-spacing:2.5px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:12.5px;font-weight:400;letter-spacing:0.3px;transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--gold)!important;color:#0B0B0B!important;padding:10px 24px!important;border-radius:3px;font-family:'Montserrat',sans-serif;font-weight:700!important;font-size:11px!important;letter-spacing:1px;text-transform:uppercase;transition:background 0.2s!important}
+.nav-cta:hover{background:var(--gold-light)!important}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 40px;position:relative;overflow:hidden;background:var(--black)}
+.hero-geo{position:absolute;inset:0;background-image:linear-gradient(rgba(212,175,55,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,0.025) 1px,transparent 1px);background-size:72px 72px;pointer-events:none}
+.hero-glow{position:absolute;top:35%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(212,175,55,0.045) 0%,transparent 68%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--gold-border);padding:8px 20px;border-radius:2px;font-size:10px;font-weight:600;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:36px;font-family:'Montserrat',sans-serif;position:relative}
+.badge-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pulse 2.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(28px,4.2vw,52px);font-weight:800;line-height:1.1;max-width:820px;margin-bottom:28px;color:var(--white);letter-spacing:-0.5px;position:relative}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{font-size:15px;color:var(--muted);max-width:660px;font-weight:300;margin-bottom:48px;line-height:1.85;position:relative}
+.hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center;margin-bottom:72px;position:relative}
+.btn-gold{background:var(--gold);color:#0B0B0B;padding:15px 38px;border-radius:3px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--white);padding:14px 38px;border-radius:3px;border:1px solid var(--gold-border);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:border-color 0.2s,color 0.2s,transform 0.15s;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:0;border:1px solid var(--gold-border);border-radius:3px;overflow:hidden;position:relative}
+.hero-stat{padding:22px 40px;border-right:1px solid var(--gold-border);display:flex;flex-direction:column;align-items:center;gap:5px;transition:background 0.2s}
+.hero-stat:hover{background:var(--gold-soft)}
+.hero-stat:last-child{border-right:none}
+.stat-num{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:var(--gold)}
+.stat-label{font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-family:'Montserrat',sans-serif;white-space:nowrap}
+
+/* INTRO BAND */
+.intro-band{background:var(--charcoal);border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border);padding:44px 0}
+.intro-inner{max-width:1080px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:56px;flex-wrap:wrap}
+.intro-text{flex:1;min-width:300px;font-size:14px;color:var(--muted);font-weight:300;line-height:1.85}
+.intro-text strong{color:var(--white);font-weight:500}
+.intro-divider{width:1px;height:64px;background:var(--gold-border);flex-shrink:0}
+.intro-promise{display:flex;gap:36px;flex-wrap:wrap}
+.ip-item{display:flex;flex-direction:column;gap:3px}
+.ip-val{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--white)}
+.ip-label{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+
+/* TRUST BAND */
+.trust-band{background:var(--black);border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border);padding:28px 0}
+.trust-inner{max-width:1080px;margin:0 auto;padding:0 40px;display:flex;align-items:flex-start;gap:16px}
+.trust-icon{color:var(--gold);font-size:18px;flex-shrink:0;margin-top:2px}
+.trust-text{font-size:13px;color:var(--muted);font-weight:300;line-height:1.75}
+.trust-text strong{color:var(--white);font-weight:500}
+
+/* SERVE */
+.serve-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--gold-border);border:1px solid var(--gold-border);border-radius:3px;overflow:hidden}
+.serve-card{background:var(--charcoal);padding:38px 32px;transition:background 0.25s}
+.serve-card:hover{background:var(--charcoal2)}
+.serve-card-num{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;color:var(--gold);letter-spacing:3px;margin-bottom:20px;text-transform:uppercase}
+.serve-card-title{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:var(--white);margin-bottom:12px;line-height:1.25}
+.serve-card-desc{font-size:13px;color:var(--muted);line-height:1.8;font-weight:300}
+
+/* SERVICES */
+.services-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.service-group{background:var(--charcoal);border:1px solid var(--gold-border);border-radius:3px;overflow:hidden;transition:border-color 0.25s}
+.service-group:hover{border-color:var(--gold-border-hover)}
+.sg-header{padding:26px 28px 22px;border-bottom:1px solid var(--gold-border)}
+.sg-num{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.sg-title{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:var(--white);line-height:1.2}
+.sg-body{padding:22px 28px 28px}
+.sg-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.sg-list li{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--muted);font-weight:300;line-height:1.55}
+.sg-list li::before{content:'—';color:var(--gold);font-size:10px;flex-shrink:0;margin-top:4px}
+
+/* PM */
+.pm-section{background:var(--charcoal);border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border)}
+.pm-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.pm-right{display:flex;flex-direction:column;gap:14px}
+.pm-point{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;background:var(--charcoal2);border:1px solid var(--gold-border);border-radius:3px;transition:border-color 0.2s}
+.pm-point:hover{border-color:var(--gold-border-hover)}
+.pm-icon{width:34px;height:34px;flex-shrink:0;border:1px solid var(--gold-border);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--gold-soft)}
+.pm-point-title{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px}
+.pm-point-desc{font-size:12px;color:var(--muted);line-height:1.65;font-weight:300}
+
+/* QA */
+.qa-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.qa-card{background:var(--charcoal);border:1px solid var(--gold-border);border-radius:3px;padding:28px;transition:border-color 0.2s,background 0.2s}
+.qa-card:hover{border-color:var(--gold-border-hover);background:var(--charcoal2)}
+.qa-card-num{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;color:var(--gold);margin-bottom:12px;text-transform:uppercase}
+.qa-card-title{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:8px}
+.qa-card-desc{font-size:12.5px;color:var(--muted);line-height:1.75;font-weight:300}
+
+/* TOOLS */
+.tools-section{background:var(--charcoal);border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border);padding:72px 0}
+.tools-grid{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}
+.tool-item{display:flex;align-items:center;justify-content:center;padding:14px 22px;background:var(--black);border:1px solid var(--gold-border);border-radius:3px;transition:border-color 0.2s,background 0.2s;min-width:110px;height:56px}
+.tool-item:hover{border-color:var(--gold-border-hover);background:#111}
+.tool-label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:0.3px;transition:color 0.2s;white-space:nowrap}
+.tool-item:hover .tool-label{color:var(--white)}
+.tool-icon{font-size:16px;margin-right:8px;flex-shrink:0}
+.tool-note{text-align:center;font-size:12px;color:var(--muted);margin-top:20px;font-weight:300;font-style:italic}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:1px solid var(--gold-border);border-radius:3px;overflow:hidden}
+.step-item{padding:36px 28px;border-right:1px solid var(--gold-border);background:var(--charcoal);transition:background 0.2s}
+.step-item:last-child{border-right:none}
+.step-item:hover{background:var(--charcoal2)}
+.step-n{font-family:'Montserrat',sans-serif;font-size:30px;font-weight:800;color:var(--gold-border);line-height:1;margin-bottom:20px}
+.step-title{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.3}
+.step-desc{font-size:12.5px;color:var(--muted);line-height:1.75;font-weight:300}
+
+/* PRICING */
+.pilot-section{background:var(--charcoal);border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border)}
+.pilot-intro{background:var(--black);border:1px solid var(--gold-border);border-radius:3px;padding:32px 36px;margin-bottom:28px;display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap}
+.pilot-intro-text{flex:1;min-width:280px}
+.pilot-intro-text p{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.85}
+.pilot-intro-text p+p{margin-top:12px}
+.pilot-intro-note{font-size:12px;color:var(--gold);font-style:italic;margin-top:16px;padding-left:12px;border-left:2px solid var(--gold-border);font-weight:300}
+.pilot-scope{background:var(--charcoal2);border:1px solid var(--gold-border);border-radius:3px;padding:20px 24px;min-width:220px;flex-shrink:0;align-self:center}
+.pilot-scope-title{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.pilot-scope-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.pilot-scope-list li{font-size:12px;color:var(--muted);font-weight:300;display:flex;gap:8px;align-items:flex-start}
+.pilot-scope-list li::before{content:'—';color:var(--gold);font-size:10px;flex-shrink:0;margin-top:3px}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.price-card{background:var(--black);border:1px solid var(--gold-border);border-radius:3px;padding:36px 32px;display:flex;flex-direction:column;transition:border-color 0.25s,transform 0.2s;position:relative}
+.price-card:hover{border-color:var(--gold-border-hover);transform:translateY(-3px)}
+.price-card.featured{border-color:var(--gold);background:linear-gradient(160deg,#1b1900,#0f0f0f)}
+.featured-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:#0B0B0B;font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:0 0 3px 3px;white-space:nowrap}
+.price-tier{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.price-amount{font-family:'Montserrat',sans-serif;font-size:40px;font-weight:800;color:var(--white);line-height:1;margin-bottom:4px}
+.price-amount sup{font-size:18px;vertical-align:super;color:var(--gold)}
+.price-amount.custom{font-size:22px;color:var(--gold);margin-top:8px;line-height:1.3}
+.price-period{font-size:11.5px;color:var(--muted);margin-bottom:20px}
+.price-blurb{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:20px}
+.price-divider{height:1px;background:var(--gold-border);margin-bottom:20px}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;margin-bottom:28px}
+.price-features li{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);font-weight:300}
+.pf-check{color:var(--gold);font-size:10px;flex-shrink:0;margin-top:4px}
+.price-cta{display:block;text-align:center;padding:13px;border-radius:3px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all 0.2s}
+.cta-gold{background:var(--gold);color:#0B0B0B}
+.cta-gold:hover{background:var(--gold-light)}
+.cta-outline{background:transparent;color:var(--white);border:1px solid var(--gold-border)}
+.cta-outline:hover{border-color:var(--gold);color:var(--gold)}
+.price-all-note{text-align:center;font-size:12px;color:var(--muted);margin-top:24px;font-style:italic;font-weight:300}
+
+/* CTA */
+.cta-section{text-align:center;padding:96px 40px;background:var(--black);border-top:1px solid var(--gold-border);position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(212,175,55,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,0.02) 1px,transparent 1px);background-size:72px 72px;pointer-events:none}
+.cta-tag{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:block;position:relative}
+.cta-section h2{font-family:'Montserrat',sans-serif;font-size:clamp(24px,3.2vw,38px);font-weight:800;color:var(--white);letter-spacing:-0.3px;margin-bottom:16px;line-height:1.15;position:relative}
+.cta-section>p{font-size:14px;color:var(--muted);font-weight:300;margin-bottom:44px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.85;position:relative}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;position:relative}
+.cta-contact{font-size:13px;color:var(--muted);position:relative}
+.cta-contact a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-border);transition:border-color 0.2s}
+.cta-contact a:hover{border-color:var(--gold)}
+
+/* FOOTER */
+footer{background:#090909;border-top:1px solid var(--gold-border);padding:40px 0}
+.footer-inner{max-width:1080px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-logo{display:flex;align-items:center;gap:16px}
+.footer-logo img{width:48px;height:48px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(212,175,55,0.12))}
+.footer-brand{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--white)}
+.footer-brand span{color:var(--muted);font-weight:400;font-size:11px;margin-left:6px}
+.footer-offices{display:flex;gap:20px;font-size:11px;color:var(--muted);letter-spacing:0.5px}
+.footer-copy{font-size:11px;color:var(--muted)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-inner{padding:0 20px}
+  .nav-links{display:none}
+  .section-inner{padding:0 20px}
+  section{padding:64px 0}
+  .hero{padding:72px 20px;min-height:auto}
+  .hero-stats{flex-wrap:wrap}
+  .hero-stat{flex:1;min-width:140px;border-right:none;border-bottom:1px solid var(--gold-border)}
+  .hero-stat:last-child{border-bottom:none}
+  .pm-grid{grid-template-columns:1fr;gap:40px}
+  .cta-section{padding:64px 20px}
+  .footer-inner{padding:0 20px;flex-direction:column;text-align:center;gap:20px}
+  .footer-offices{justify-content:center}
+  .intro-inner{gap:24px}
+  .intro-divider{display:none}
+  .steps{grid-template-columns:1fr}
+  .step-item{border-right:none;border-bottom:1px solid var(--gold-border)}
+  .step-item:last-child{border-bottom:none}
+  .pilot-intro{flex-direction:column}
+  .tools-grid{gap:10px}
+  .tool-item{min-width:100px;padding:12px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="GOLDLOGO.png" alt="Trade Fusion Group" class="nav-logo-img">
+      <div class="nav-logo-text">
+        <span class="nav-fusion">FusionOps</span>
+        <span class="nav-by">by Trade Fusion Group</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How it works</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#pricing">Flexible Pilots</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-geo"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-badge"><div class="badge-dot"></div>Managed Support Operations Partner</div>
+  <h1>Scalable Gaming &amp; Ecommerce<br><em>Support Teams, Ready Fast</em></h1>
+  <p class="hero-sub">FusionOps by Trade Fusion Group helps gaming studios, ecommerce brands, and digital businesses manage customer support, player tickets, Shopify operations, fulfilment follow-ups, QA, and back-office workflows — through trained agents, structured processes, and experienced project management.</p>
+  <div class="hero-actions">
+    <a href="mailto:info@tradefusiongroup.com?subject=Book a 15-Minute Call — FusionOps" class="btn-gold">Book a 15-Minute Call</a>
+    <a href="#pricing" class="btn-outline">View Pilot Packages</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="stat-num">Scalable</span><span class="stat-label">Agent Network Ready</span></div>
+    <div class="hero-stat"><span class="stat-num">Dedicated</span><span class="stat-label">QA Team</span></div>
+    <div class="hero-stat"><span class="stat-num">PMP</span><span class="stat-label">Certified Project Managers</span></div>
+    <div class="hero-stat"><span class="stat-num">24/7</span><span class="stat-label">Scalable Coverage</span></div>
+  </div>
+</section>
+
+<!-- INTRO BAND -->
+<div class="intro-band">
+  <div class="intro-inner">
+    <p class="intro-text"><strong>FusionOps is not a generic call centre.</strong> We are a managed support operations partner — built for gaming studios, ecommerce brands, and fast-growing digital businesses that need professional agent teams, QA control, and certified project management without building an internal department. Our delivery team brings hands-on experience gained supporting CX and QA operations for major AAA gaming titles and enterprise ecommerce operations at scale. We currently support UK and US based clients across multiple time zones.</p>
+    <div class="intro-divider"></div>
+    <div class="intro-promise">
+      <div class="ip-item"><span class="ip-val">Go live in as little as 48 hours</span><span class="ip-label">Fast structured onboarding</span></div>
+      <div class="ip-item"><span class="ip-val">UK &amp; US offices</span><span class="ip-label">International presence</span></div>
+      <div class="ip-item"><span class="ip-val">No lock-in to start</span><span class="ip-label">Flexible commitment</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAND -->
+<div class="trust-band">
+  <div class="trust-inner">
+    <div class="trust-icon">🔒</div>
+    <p class="trust-text"><strong>Confidentiality &amp; data handling:</strong> We follow client-approved SOPs, access controls, escalation rules, and confidentiality requirements for every support operation. All agents operate under defined access levels and process documentation from day one.</p>
+  </div>
+</div>
+
+<!-- WHO WE SERVE -->
+<section>
+  <div class="section-inner">
+    <span class="section-tag">Who we work with</span>
+    <h2 class="section-title">Built for digital businesses that move fast</h2>
+    <p class="section-sub">We work with companies that need operational capacity quickly — without the cost and delay of building a team in-house.</p>
+    <div class="serve-grid">
+      <div class="serve-card">
+        <div class="serve-card-num">01 — Gaming</div>
+        <div class="serve-card-title">Gaming Studios &amp; Developers</div>
+        <div class="serve-card-desc">Indie studios, mobile game developers, and web3 gaming companies who need professional player support so their development team stays focused on building and shipping.</div>
+      </div>
+      <div class="serve-card">
+        <div class="serve-card-num">02 — Ecommerce</div>
+        <div class="serve-card-title">Ecommerce &amp; Marketplace Brands</div>
+        <div class="serve-card-desc">DTC brands, dropshipping businesses, and online retailers selling across multiple platforms who need store operations, order coordination, customer support, and catalogue management fully managed.</div>
+      </div>
+      <div class="serve-card">
+        <div class="serve-card-num">03 — Digital</div>
+        <div class="serve-card-title">SaaS &amp; Digital Startups</div>
+        <div class="serve-card-desc">Fast-scaling tech companies and digital businesses that need structured 24/7 customer support and back-office operations without hiring and managing an internal team.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="alt-bg" id="services" style="border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border)">
+  <div class="section-inner">
+    <span class="section-tag">What we do</span>
+    <h2 class="section-title">Core support and admin functions,<br>set up quickly and managed properly</h2>
+    <p class="section-sub">Three service areas. One managed operations partner.</p>
+    <div class="services-wrap">
+      <div class="service-group">
+        <div class="sg-header"><div class="sg-num">Service Area 01</div><div class="sg-title">Gaming Support</div></div>
+        <div class="sg-body"><ul class="sg-list">
+          <li>Player email support</li>
+          <li>Account and login issue handling</li>
+          <li>In-game purchase issue resolution</li>
+          <li>Ticket triage and escalation management</li>
+          <li>Launch and update overflow support</li>
+          <li>Community-style player communication</li>
+        </ul></div>
+      </div>
+      <div class="service-group">
+        <div class="sg-header"><div class="sg-num">Service Area 02</div><div class="sg-title">Store &amp; Order Operations</div></div>
+        <div class="sg-body"><ul class="sg-list">
+          <li>Product uploads from supplier invoices</li>
+          <li>Catalogue and SKU management</li>
+          <li>Category, tag, and pricing updates</li>
+          <li>Dropshipping order coordination</li>
+          <li>Supplier follow-ups and communication</li>
+          <li>Fulfilment tracking and customer updates</li>
+          <li>Customer email and chat support</li>
+        </ul></div>
+      </div>
+      <div class="service-group">
+        <div class="sg-header"><div class="sg-num">Service Area 03</div><div class="sg-title">Managed Support Operations</div></div>
+        <div class="sg-body"><ul class="sg-list">
+          <li>24/7 scalable support coverage</li>
+          <li>QA monitoring and quality reviews</li>
+          <li>Knowledge-base creation and management</li>
+          <li>SOP setup and documentation</li>
+          <li>SLA tracking and performance reporting</li>
+          <li>Escalation management and oversight</li>
+        </ul></div>
+      </div>
+      <div class="service-group">
+        <div class="sg-header"><div class="sg-num">Service Area 04</div><div class="sg-title">Project Management &amp; Delivery</div></div>
+        <div class="sg-body"><ul class="sg-list">
+          <li>Sprint and release planning support</li>
+          <li>Cross-team and vendor coordination</li>
+          <li>SOP creation and process documentation</li>
+          <li>Workflow setup and optimisation</li>
+          <li>Delivery oversight and milestone tracking</li>
+          <li>Stakeholder reporting and updates</li>
+          <li>Agile, Waterfall and Scrum delivery models</li>
+        </ul></div>
+      </div>
+      <div class="service-group">
+        <div class="sg-header"><div class="sg-num">Service Area 05</div><div class="sg-title">Business Analysis &amp; Client Liaison</div></div>
+        <div class="sg-body"><ul class="sg-list">
+          <li>Requirements gathering and documentation</li>
+          <li>Bridging business and technical teams</li>
+          <li>Platform and product delivery oversight</li>
+          <li>Payment domain and transaction flow analysis</li>
+          <li>Client update management and communication</li>
+          <li>UAT coordination and sign-off support</li>
+          <li>Process gap analysis and improvement</li>
+        </ul></div>
+      </div>
+  </div>
+</section>
+
+<!-- PM SECTION -->
+<section class="pm-section">
+  <div class="section-inner">
+    <div class="pm-grid">
+      <div>
+        <span class="section-tag">Leadership</span>
+        <h2 class="section-title">Managed by Certified Project Leaders</h2>
+        <p class="section-sub" style="margin-bottom:0">FusionOps is supported by PMP-certified project managers experienced in Agile, Waterfall, and Scrum delivery models. This allows us to manage onboarding, workflows, SLAs, reporting, training, QA, and client communication in a structured and professional way.</p>
+      </div>
+      <div class="pm-right">
+        <div class="pm-point"><div class="pm-icon">📋</div><div><div class="pm-point-title">PMP-Certified Project Managers</div><div class="pm-point-desc">Our certified PMs oversee client operations, team performance, and delivery standards across all active accounts.</div></div></div>
+        <div class="pm-point"><div class="pm-icon">⚙️</div><div><div class="pm-point-title">Agile, Waterfall &amp; Scrum Experience</div><div class="pm-point-desc">We adapt our delivery model to match your business — structured or flexible, as your operation requires.</div></div></div>
+        <div class="pm-point"><div class="pm-icon">📊</div><div><div class="pm-point-title">SLA Tracking &amp; Reporting</div><div class="pm-point-desc">Clear, regular reporting on response times, ticket volumes, quality scores, and escalation handling.</div></div></div>
+        <div class="pm-point"><div class="pm-icon">🗂️</div><div><div class="pm-point-title">Process Documentation &amp; Escalation Control</div><div class="pm-point-desc">Every operation is documented with clear SOPs, escalation paths, and onboarding structure from day one.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QA -->
+<section style="border-top:1px solid var(--gold-border)">
+  <div class="section-inner">
+    <span class="section-tag">Quality Assurance</span>
+    <h2 class="section-title">Quality Assurance Built In</h2>
+    <p class="section-sub">Our QA team monitors support quality, response accuracy, tone, SLA compliance, escalation handling, and customer experience standards across every active operation.</p>
+    <div class="qa-grid">
+      <div class="qa-card"><div class="qa-card-num">QA — 01</div><div class="qa-card-title">Dedicated QA Team</div><div class="qa-card-desc">Dedicated QA agents monitoring live operations — not an afterthought added at the end of a workflow.</div></div>
+      <div class="qa-card"><div class="qa-card-num">QA — 02</div><div class="qa-card-title">Ticket Quality Reviews</div><div class="qa-card-desc">Regular review of agent responses for accuracy, tone, resolution quality, and brand alignment.</div></div>
+      <div class="qa-card"><div class="qa-card-num">QA — 03</div><div class="qa-card-title">SLA Monitoring</div><div class="qa-card-desc">Response time and resolution targets tracked against agreed SLAs with clear escalation when thresholds are at risk.</div></div>
+      <div class="qa-card"><div class="qa-card-num">QA — 04</div><div class="qa-card-title">Tone &amp; Accuracy Checks</div><div class="qa-card-desc">Every client operation has defined tone guidelines. QA enforces these consistently across every agent interaction.</div></div>
+      <div class="qa-card"><div class="qa-card-num">QA — 05</div><div class="qa-card-title">Weekly Quality Reports</div><div class="qa-card-desc">Clear weekly summaries covering quality scores, ticket volumes, SLA performance, and improvement actions.</div></div>
+      <div class="qa-card"><div class="qa-card-num">QA — 06</div><div class="qa-card-title">Continuous Improvement</div><div class="qa-card-desc">QA findings feed directly into agent coaching, SOP updates, and process improvements — not just reported and forgotten.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<div class="tools-section" id="tools">
+  <div class="section-inner">
+    <span class="section-tag" style="text-align:center">Tools we can support</span>
+    <h2 class="section-title" style="text-align:center;margin-bottom:12px">Platforms &amp; tools our team works with</h2>
+    <p style="text-align:center;font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.8">Our agents are experienced across these platforms and can be trained on client-specific tools and workflows.</p>
+    <div class="tools-grid">
+      <div class="tool-item"><span class="tool-icon">🛍️</span><span class="tool-label">Shopify</span></div>
+      <div class="tool-item"><span class="tool-icon">💬</span><span class="tool-label">Zendesk</span></div>
+      <div class="tool-item"><span class="tool-icon">🎧</span><span class="tool-label">Freshdesk</span></div>
+      <div class="tool-item"><span class="tool-icon">✉️</span><span class="tool-label">Gmail</span></div>
+      <div class="tool-item"><span class="tool-icon">⚡</span><span class="tool-label">Gorgias</span></div>
+      <div class="tool-item"><span class="tool-icon">📦</span><span class="tool-label">Amazon Seller</span></div>
+      <div class="tool-item"><span class="tool-icon">📥</span><span class="tool-label">Shared Inboxes</span></div>
+      <div class="tool-item"><span class="tool-icon">🖥️</span><span class="tool-label">Helpdesk Platforms</span></div>
+    </div>
+    <p class="tool-note">Also experienced with: Etsy, eBay, ShipStation, LitCommerce, Linnworks, Intercom, HelpScout, Zoho Desk, LiveChat, Crisp, Outlook, Slack, Notion, Trello, Asana, Discord and Helpshift.</p>
+    <p class="tool-note" style="margin-top:8px">Client-specific tools and platforms can be supported after a structured onboarding and training period.</p>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="process" style="border-top:1px solid var(--gold-border)">
+  <div class="section-inner">
+    <span class="section-tag">How it works</span>
+    <h2 class="section-title">From first conversation to fully operational</h2>
+    <p class="section-sub">We assign, brief, and onboard the right support team quickly — with structure and oversight from day one.</p>
+    <div class="steps">
+      <div class="step-item"><div class="step-n">01</div><div class="step-title">Initial conversation</div><div class="step-desc">Book a 15-minute call. We understand your business, support volume, tools, and requirements before proposing anything.</div></div>
+      <div class="step-item"><div class="step-n">02</div><div class="step-title">Team assignment</div><div class="step-desc">We assign and brief the right agents, QA specialists, and project manager from our team based on your specific operation.</div></div>
+      <div class="step-item"><div class="step-n">03</div><div class="step-title">Structured onboarding</div><div class="step-desc">SOPs documented, SLAs agreed, escalation paths defined, and a dedicated weekly check-in set up before we go live.</div></div>
+      <div class="step-item"><div class="step-n">04</div><div class="step-title">Go live &amp; scale</div><div class="step-desc">Your operation goes live in as little as 48 hours. Scale the team as your business grows — no recruitment delays on your side.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FLEXIBLE PILOT OPTIONS -->
+<section class="pilot-section" id="pricing">
+  <div class="section-inner">
+    <span class="section-tag">Flexible Pilot Options</span>
+    <h2 class="section-title">Start small, prove the fit, then scale</h2>
+    <div class="pilot-intro">
+      <div class="pilot-intro-text">
+        <p>FusionOps gives clients the option to start with a focused pilot before moving into a larger support operation. This allows companies to test our quality, response times, reporting, and operational fit without committing to a large long-term setup from day one.</p>
+        <p class="pilot-intro-note">Each pilot is scoped around the client's workload, required coverage, tools, ticket volume, and support needs. Every pilot includes a dedicated point of contact and a structured weekly check-in.</p>
+      </div>
+      <div class="pilot-scope">
+        <div class="pilot-scope-title">Every pilot includes</div>
+        <ul class="pilot-scope-list">
+          <li>Defined SLA targets</li>
+          <li>QA oversight from day one</li>
+          <li>Weekly performance reporting</li>
+          <li>PM point of contact</li>
+          <li>Structured escalation flow</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tier">Starter Support Pilot</div>
+        <div class="price-amount custom">Scoped to<br>Your Needs</div>
+        <div class="price-period">proposal prepared after initial call</div>
+        <p class="price-blurb">For companies that want to test FusionOps with a focused support workload — ticket handling, store admin, or back-office tasks — before scaling further.</p>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><span class="pf-check">—</span>Dedicated support coverage</li>
+          <li><span class="pf-check">—</span>Email, chat, or ticket support</li>
+          <li><span class="pf-check">—</span>Basic escalation flow</li>
+          <li><span class="pf-check">—</span>Weekly reporting</li>
+          <li><span class="pf-check">—</span>QA oversight included</li>
+          <li><span class="pf-check">—</span>PM point of contact</li>
+        </ul>
+        <a href="mailto:info@tradefusiongroup.com?subject=Starter Support Pilot — FusionOps" class="price-cta cta-outline">Discuss a Starter Pilot</a>
+      </div>
+      <div class="price-card featured">
+        <div class="featured-badge">Recommended</div>
+        <div class="price-tier">Growth Support Pilot</div>
+        <div class="price-amount custom">Scoped to<br>Your Needs</div>
+        <div class="price-period">proposal prepared after initial call</div>
+        <p class="price-blurb">For businesses with increasing customer queries, product uploads, player tickets, or fulfilment follow-ups that need structured, managed support coverage.</p>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><span class="pf-check">—</span>Extended dedicated support coverage</li>
+          <li><span class="pf-check">—</span>Customer or player support</li>
+          <li><span class="pf-check">—</span>Store and order operations</li>
+          <li><span class="pf-check">—</span>QA monitoring included</li>
+          <li><span class="pf-check">—</span>Project manager oversight</li>
+          <li><span class="pf-check">—</span>Weekly performance reporting</li>
+        </ul>
+        <a href="mailto:info@tradefusiongroup.com?subject=Growth Support Pilot — FusionOps" class="price-cta cta-gold">Build My Support Plan</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">Scale / 24-7 Support Pod</div>
+        <div class="price-amount custom">Custom<br>Scoped</div>
+        <div class="price-period">tailored to your full operation</div>
+        <p class="price-blurb">For gaming, ecommerce, or digital businesses that need wider coverage, a full agent team, QA involvement, and certified project management oversight.</p>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><span class="pf-check">—</span>Full multi-agent support team</li>
+          <li><span class="pf-check">—</span>24/7 coverage</li>
+          <li><span class="pf-check">—</span>QA team involvement</li>
+          <li><span class="pf-check">—</span>PMP-certified project manager</li>
+          <li><span class="pf-check">—</span>Custom reporting dashboard</li>
+          <li><span class="pf-check">—</span>SLA management and escalation process</li>
+        </ul>
+        <a href="mailto:info@tradefusiongroup.com?subject=Scale Pod Enquiry — FusionOps" class="price-cta cta-outline">Speak to FusionOps</a>
+      </div>
+    </div>
+    <p class="price-all-note">Each pilot is scoped individually. All enquiries are handled directly by our team — no automated funnels.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <span class="cta-tag">Get started</span>
+  <h2>Ready to build your support operation?</h2>
+  <p>Book a 15-minute call with our team. We'll understand your needs and explain exactly how FusionOps can support your business — no commitment required to have a conversation.</p>
+  <div class="cta-actions">
+    <a href="mailto:info@tradefusiongroup.com?subject=Book a 15-Minute Call — FusionOps" class="btn-gold">Book a 15-Minute Call</a>
+    <a href="mailto:info@tradefusiongroup.com?subject=30-Day Pilot — FusionOps" class="btn-outline">Start a 30-Day Pilot</a>
+    <a href="mailto:info@tradefusiongroup.com?subject=General Enquiry — FusionOps" class="btn-outline">Speak to FusionOps</a>
+  </div>
+  <p class="cta-contact"><a href="mailto:info@tradefusiongroup.com">info@tradefusiongroup.com</a></p>
+  <p style="font-size:12px;color:var(--muted);margin-top:16px;font-style:italic;position:relative;">We respond to all enquiries within 3 business hours.</p>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--charcoal);border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border)">
+  <div class="section-inner">
+    <span class="section-tag">Common questions</span>
+    <h2 class="section-title">Questions clients typically ask</h2>
+    <p class="section-sub">We'd rather answer these upfront than have them slow down a conversation.</p>
+    <div style="display:flex;flex-direction:column;gap:16px;max-width:760px">
+
+      <div style="background:var(--black);border:1px solid var(--gold-border);border-radius:3px;padding:28px 32px">
+        <div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:10px">How quickly can FusionOps actually go live?</div>
+        <div style="font-size:13px;color:var(--muted);font-weight:300;line-height:1.8">In most cases we can have a structured support team operational within 48 hours of agreeing scope. Our onboarding process — SOPs, access setup, briefing, and escalation paths — is built to move fast without cutting corners.</div>
+      </div>
+
+      <div style="background:var(--black);border:1px solid var(--gold-border);border-radius:3px;padding:28px 32px">
+        <div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:10px">What happens if an agent's performance is not up to standard?</div>
+        <div style="font-size:13px;color:var(--muted);font-weight:300;line-height:1.8">Our QA team monitors performance continuously. If an agent is underperforming against agreed standards, our project manager handles it directly — coaching, retraining, or replacement. You do not need to manage individual agents. That is our responsibility.</div>
+      </div>
+
+      <div style="background:var(--black);border:1px solid var(--gold-border);border-radius:3px;padding:28px 32px">
+        <div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:10px">Do I need to sign a long contract to get started?</div>
+        <div style="font-size:13px;color:var(--muted);font-weight:300;line-height:1.8">No. We offer a 30-day pilot specifically so clients can test the operation before committing to anything longer term. We believe the work earns the contract — not the paperwork.</div>
+      </div>
+
+      <div style="background:var(--black);border:1px solid var(--gold-border);border-radius:3px;padding:28px 32px">
+        <div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:10px">How do I communicate with the team day to day?</div>
+        <div style="font-size:13px;color:var(--muted);font-weight:300;line-height:1.8">You have a dedicated project manager as your single point of contact. Weekly check-ins are structured from day one. You can communicate via email, Slack, or whatever tool works best for your business. You will never be handed to an anonymous team with no escalation path.</div>
+      </div>
+
+      <div style="background:var(--black);border:1px solid var(--gold-border);border-radius:3px;padding:28px 32px">
+        <div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:10px">What timezone do your agents work in?</div>
+        <div style="font-size:13px;color:var(--muted);font-weight:300;line-height:1.8">Our delivery team operates across multiple time zones, allowing us to cover UK, US, and global client requirements. Coverage hours are agreed during scoping so your customers always receive timely responses regardless of where they are.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="GOLDLOGO.png" alt="Trade Fusion Group">
+      <div><div class="footer-brand">FusionOps <span>· by Trade Fusion Group LTD</span></div></div>
+    </div>
+    <div class="footer-offices">
+      <span>🇬🇧 United Kingdom</span>
+      <span>🇺🇸 United States</span>
+    </div>
+    <div class="footer-copy">© 2025 Trade Fusion Group LTD. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
