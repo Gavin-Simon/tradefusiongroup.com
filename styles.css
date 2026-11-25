@@ -109,10 +109,13 @@ p+p{margin-top:14px}
 .svc h2{margin-bottom:12px}
 .svc .intro{color:var(--muted);font-size:16px;line-height:1.8}
 .qa-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0 10px;list-style:none;counter-reset:q}
-.qa-steps li{counter-increment:q;border:1px solid var(--gold-border);border-radius:4px;padding:16px;font:700 14px var(--fh);color:var(--white)}
+.qa-steps li{counter-increment:q;border:0;border-left:2px solid var(--gold-border);border-radius:0;padding:2px 0 2px 14px;font:700 14px var(--fh);color:var(--white)}
 .qa-steps li::before{content:"0" counter(q);display:block;font-size:12px;color:var(--gold);letter-spacing:.14em;margin-bottom:6px}
 .chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:14px 0 6px}
 .chips li{border:1px solid var(--gold-border);border-radius:100px;padding:6px 16px;font-size:14px;color:var(--white);background:var(--gold-soft)}
+.chips.plain{gap:6px 20px}
+.chips.plain li{border:0;border-radius:0;background:none;padding:0;color:var(--white)}
+.chips.plain li::before{content:"\2022";color:var(--gold);margin-right:8px}
 .small{font-size:13.5px;color:var(--muted);line-height:1.65;margin-top:16px}
 .stages{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .stages li{counter-increment:s;background:var(--black);border:1px solid var(--border);border-radius:4px;padding:24px 22px}
